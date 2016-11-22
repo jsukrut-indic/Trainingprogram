@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<head>
+<title>Registration</title>
+	<!-- Bootstrap Links -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+  			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  			crossorigin="anonymous">
+  	</script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	 <script type= "text/javascript" src = "countries3.js"></script>
+
+<script type="text/javascript">
+
+function check_pincode()
+{
+	var pat1=/^\d{6}$/;
+	var pin_code=document.getElementById("pin");
+	if(!pat1.test(pin_code.value))	
+	{
+		alert("Pin code should be 6 digits "); 
+		return false;
+	}	
+}
+
+function check_email()
+{
+	var user_id=document.getElementById("email");
+	var filter=/^([a-z A-Z 0-9 _\.\-])+\@(([a-z A-Z 0-9\-])+\.)+([a-z A-z 0-9]{3,3})+$/;
+	if(!filter.test(user_id.value))
+	{
+		alert("Email is in www.gmail.com format");
+		return false;
+	}
+}
+
+function check_mobile()
+{
+	var user_mobile=document.getElementById("mobile");
+	var pattern=/^\d{10}$/;
+	if(!pattern.test(user_mobile.value))
+	{
+		alert("Phone nubmer is in 10 digit format ");
+		return false;
+	}
+}
+
+function ConfirmPass() {
+        var p1 = document.getElementById("pass1").value;
+        var p2 = document.getElementById("pass2").value;
+        if (p1 != p2) {
+            document.getElementById("pass1").style.borderColor = "#E34234";
+            document.getElementById("pass2").style.borderColor = "#E34234";
+        }
+        else {
+            alert("Passwords Match!!!");
+         	document.getElementById("pass1").style.borderColor = "#1e90ff";
+            document.getElementById("pass2").style.borderColor = "#1e90ff";   
+        }
+    }
+
+
+ function reg(){
+ 	ConfirmPass();
+ 	
+ 	document.write("Hello",user.value);
+ }
+
+</script>
+
+<style>
+td{padding: 15px;}
+textarea.add {
+    resize: none;
+}
+td.glphy{
+	width=20Px;
+}
+
+div.st{
+	background-image:url("download.jpg");
+	padding:10px;
+}
+
+.floating-box {
+    float: left;
+    width: 40px;
+    height:20px;
+    margin: 10px;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class="row" style="margin: 5px 5px 5px 50px;">
+    <div class="col-md-12">
+    <table>
+    	<tr>
+    		<td><img src="loginLogo.png" height="150" width="180"/></td>
+    		<td colspan=4><br><br><br><br>&nbsp; <h4><b><font size="5">MAHARASHTRA TOURISM</font></b></h4>
+    			           Maharashtra Tourism Development Corporation
+
+    		</td>
+    	</tr>
+    </table>	 
+    </div>
+</div>
+<div style="background-color:#757271;padding:10px;"></div>
+<div class="st">
+	<h3>Registration</h3>
+	<div style="border: 1px solid black;padding=10px;background-color:white;">
+		<div style="background-color:#f7f7f7; margin: 20px 20px 20px 20px; padding=10px;border: 1px solid #344153;">
+			<form name="registration">			
+			<table>
+				<tr>
+				<td colspan=3><div class="floating-box"><img src="plainicon.png"class="img-circle" height=40 width=40/></div><h3>Personal Information</h3></td>
+				</tr>
+				<tr>
+					<td>Salutation</td>
+					<td> : </td>
+					<td><select  class="form-control" name="salutation">
+  							<option value="mr">Mr</option>
+  							<option value="mrs">Mrs</option>
+  							<option value="dr">Dr</option>
+  							<option value="ms">Ms</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>First Name <font color=red>*</font></td>
+					<td> : </td>
+					<td><input class="form-control" type="text" name="first_name"  id="first_name" style="text-transform:capitalize;"></td>
+					<td colspan=2> </td>
+					<td>Last Name <font color=red>*</font></td>
+					<td> : </td>
+					<td><input class="form-control" type="text" name="last_name"  id="last_name" style="text-transform:capitalize;" ></td>
+				</tr>
+				<tr>
+					<td>Date of Birth<font color=red>*</font></td>
+					<td> : </td>
+					<td><input  name="dob" type="date" id="dob" ></td>
+					<td colspan=2> </td>
+					<td>Gender <font color=red>*</font></td>
+					<td> : </td>
+					<td><select class="form-control" id="gender" name="gender" >
+  							<option value="male">MALE</option>
+  							<option value="female">Female</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td>Address<font color=red>*</font></td>
+					<td> : </td>
+					<td><textarea class="add"  id="address" name="address" rows="3" cols="35"> </textarea></td>
+					<td colspan=2> </td>
+					
+				</tr>
+				<tr>
+					<td>Country<font color=red>*</font></td>
+					<td> : </td>
+					<td> <select onchange="print_state('state',this.selectedIndex);" id="country" name ="country">
+						</select></td>
+					<td colspan=2> </td>
+					<td>State <font color=red>*</font></td>
+					<td> : </td>
+					<td> <select name ="state" id ="state"></select></td>
+				</tr>
+				<script language="javascript">print_country("country");</script>
+				<tr>
+					<td>City<font color=red>*</font></td>
+					<td> : </td>
+					<td><input class="form-control" type="text"  id="city" name="city" style="text-transform:capitalize;"></td>
+					<td colspan=2> </td>
+					<td>Pincode </td>
+					<td> : </td>
+					<td><input class="form-control" type="text"  id="pin" name="pin" onfocusout="check_pincode()"></td>
+				</tr>
+				<tr>
+					<td>Email<font color=red>*</font></td>
+					<td> : </td>
+					<td><input  class="form-control" type="email" id="email" name="email" onfocusout="check_email()"></td>
+					<td colspan=2> </td>
+					<td>Mobile No<font color=red>*</font> </td>
+					<td> : </td>
+					<td><input class="form-control" type="text" id="mobile" name="mobile" onfocusout="check_mobile()"></td>
+				</tr>
+				<tr>
+					<td>Fax No</td>
+					<td> : </td>
+					<td><input class="form-control" type="text" id="faxno" name="faxno"></td>
+					<td colspan=2> </td>
+					<td>Language Preffered</td>
+					<td> : </td>
+					<td><input class="form-control" type="text" id="lang" name="language"></td>
+				</tr>
+				<tr><td colspan=4><div class="floating-box"><img src="images.png" class="img-circle" height=40 width=40/></div> <h3>Registration</h3></td></tr>
+				<tr></span>
+					<td>User Name <font color=red>*</font></td>
+					<td> : </td>
+					<td><input class="form-control" type="text" id="user" name="user_name"></td>
+				</tr>	
+				<tr>
+					<td>Password <font color=red>*</font></td>
+					<td> : </td>
+					<td><input class="form-control" type="password" id="pass1" name="password"></td>
+				</tr>	
+					<td>Confirm Password <font color=red>*</font></td>
+					<td> : </td>
+					<td><input class="form-control" type="password" id="pass2" name="cpassword" onfocusout="ConfirmPass()"></td>
+
+				</tr>
+				<tr>
+					<td><input  type="submit" id="submit" class="btn btn-info"  onclick="reg()">&nbsp;
+						<input  type="reset"  id="reset"  class="btn btn-info" value="cancle" class="btn btn-info"></td>
+					
+				</tr>
+
+
+			</tabl.e>
+			</form
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
